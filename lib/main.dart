@@ -4,10 +4,10 @@ void main() {
   runApp(MaterialApp(home: VivaceskyCard()));
 }
 
-final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
-final SnackBar snackBar = const SnackBar(content: Text('This is a snackbar'));
-
 class VivaceskyCard extends StatelessWidget {
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  final SnackBar snackBar = const SnackBar(content: Text('This is a snackbar'));
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,9 +23,7 @@ class VivaceskyCard extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.add_alert),
               tooltip: 'Open Alert',
-              onPressed: () {
-                scaffoldKey.currentState.showSnackBar(snackBar);
-              },
+              onPressed: () => scaffoldKey.currentState.showSnackBar(snackBar),
             )
           ],
         ),
